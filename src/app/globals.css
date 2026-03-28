@@ -1,26 +1,167 @@
 @import "tailwindcss";
 
+/* === Kagoshima Yataimura Color Palette === */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Sakurajima (volcano red-orange) - Main */
+  --sakurajima-50: #fef3f0;
+  --sakurajima-100: #fde4dc;
+  --sakurajima-200: #fcc8b8;
+  --sakurajima-300: #f9a386;
+  --sakurajima-400: #f47350;
+  --sakurajima-500: #e94e2a;
+  --sakurajima-600: #d13a1c;
+  --sakurajima-700: #ae2d17;
+  --sakurajima-800: #8f2818;
+  --sakurajima-900: #77261a;
+
+  /* Chochin (lantern warm amber-brown) - Sub */
+  --chochin-50: #fdf8ef;
+  --chochin-100: #faeed4;
+  --chochin-200: #f4daa8;
+  --chochin-300: #edc072;
+  --chochin-400: #e5a03e;
+  --chochin-500: #dc8826;
+  --chochin-600: #c36b1c;
+  --chochin-700: #a2501a;
+  --chochin-800: #84401c;
+  --chochin-900: #6d3619;
+
+  /* Kinkowan (bay blue) - Accent */
+  --kinkowan-50: #eff7ff;
+  --kinkowan-100: #dbecfe;
+  --kinkowan-200: #beddfe;
+  --kinkowan-300: #92c9fd;
+  --kinkowan-400: #5eacfa;
+  --kinkowan-500: #3b8ef6;
+  --kinkowan-600: #2270eb;
+  --kinkowan-700: #1a5ad8;
+  --kinkowan-800: #1c49af;
+  --kinkowan-900: #1c408a;
+
+  /* Backgrounds & text */
+  --background: #fdf8ef;
+  --foreground: #3d2c1e;
+  --card-bg: #ffffff;
+  --card-border: #f4daa8;
+  --muted: #8b7355;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Sakurajima palette */
+  --color-sakurajima-50: var(--sakurajima-50);
+  --color-sakurajima-100: var(--sakurajima-100);
+  --color-sakurajima-200: var(--sakurajima-200);
+  --color-sakurajima-300: var(--sakurajima-300);
+  --color-sakurajima-400: var(--sakurajima-400);
+  --color-sakurajima-500: var(--sakurajima-500);
+  --color-sakurajima-600: var(--sakurajima-600);
+  --color-sakurajima-700: var(--sakurajima-700);
+  --color-sakurajima-800: var(--sakurajima-800);
+  --color-sakurajima-900: var(--sakurajima-900);
+
+  /* Chochin palette */
+  --color-chochin-50: var(--chochin-50);
+  --color-chochin-100: var(--chochin-100);
+  --color-chochin-200: var(--chochin-200);
+  --color-chochin-300: var(--chochin-300);
+  --color-chochin-400: var(--chochin-400);
+  --color-chochin-500: var(--chochin-500);
+  --color-chochin-600: var(--chochin-600);
+  --color-chochin-700: var(--chochin-700);
+  --color-chochin-800: var(--chochin-800);
+  --color-chochin-900: var(--chochin-900);
+
+  /* Kinkowan palette */
+  --color-kinkowan-50: var(--kinkowan-50);
+  --color-kinkowan-100: var(--kinkowan-100);
+  --color-kinkowan-200: var(--kinkowan-200);
+  --color-kinkowan-300: var(--kinkowan-300);
+  --color-kinkowan-400: var(--kinkowan-400);
+  --color-kinkowan-500: var(--kinkowan-500);
+  --color-kinkowan-600: var(--kinkowan-600);
+  --color-kinkowan-700: var(--kinkowan-700);
+  --color-kinkowan-800: var(--kinkowan-800);
+  --color-kinkowan-900: var(--kinkowan-900);
+
+  /* Semantic colors */
+  --color-card-bg: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--muted);
+
+  /* Font */
+  --font-sans: var(--font-noto-sans-jp);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-sans-jp), "Hiragino Sans", "Meiryo", sans-serif;
+}
+
+/* === Oshi Yatai "Meramera" special animations === */
+
+@theme {
+  --animate-flame-flicker: flame-flicker 1.5s ease-in-out infinite alternate;
+  --animate-sparkle: sparkle 2s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-skeleton-shimmer: skeleton-shimmer 1.5s ease-in-out infinite;
+  --animate-heart-pop: heart-pop 0.6s ease-out;
+  --animate-eruption-rise: eruption-rise 1.2s ease-out forwards;
+  --animate-eruption-particle: eruption-particle 1s ease-out forwards;
+  --animate-eruption-shake: eruption-shake 0.4s ease-in-out;
+
+  @keyframes flame-flicker {
+    0% { opacity: 0.85; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.03); }
+    100% { opacity: 0.9; transform: scale(0.98); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 8px rgba(233, 78, 42, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(233, 78, 42, 0.6), 0 0 40px rgba(233, 78, 42, 0.2); }
+  }
+
+  @keyframes skeleton-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes heart-pop {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.5); }
+    60% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+  }
+
+  @keyframes eruption-rise {
+    0% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(-40px) scale(1.6); }
+  }
+
+  @keyframes eruption-particle {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) rotate(0deg) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(var(--particle-angle, 0deg)) translateY(-50px);
+    }
+  }
+
+  @keyframes eruption-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-2px); }
+  }
 }
