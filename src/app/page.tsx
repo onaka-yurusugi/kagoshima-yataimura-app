@@ -10,12 +10,12 @@ export default function HomePage() {
       {/* Hero section */}
       <section className="mb-8 rounded-2xl bg-gradient-to-r from-sakurajima-600 via-chochin-600 to-kinkowan-600 p-6 text-center text-white shadow-lg sm:mb-10 sm:p-10">
         <h2 className="mb-2 text-2xl font-black tracking-tight sm:text-3xl lg:text-4xl">
-          🌋 鹿児島の味、ここに集結 🏮
+          🌋 かごっまふるさと屋台村 🏮
         </h2>
         <p className="text-sm text-white/85 sm:text-base">
-          桜島を望む屋台村で、あなたの「推し屋台」を見つけよう。
+          鹿児島中央駅直結！バスチカ18店舗＋ライカ7店舗、全25店舗の屋台村。
           <br className="hidden sm:block" />
-          気に入ったら布教して、みんなに広めよう！
+          あなたの「推し屋台」を見つけて、布教しよう！
         </p>
       </section>
 
